@@ -9,17 +9,14 @@ public class PunchGage : MonoBehaviour
     private float totalScore=0; // 得点を代入する変数
     float upDown = 1; // 得点を代入する変数
     public BreakObject BreakObject;
-    public SpriteChange SpriteChange;
-    Vector2 localPoint = Vector2.zero;
+    public lifeGage lifeGage;
     
     public void punch(){
-        if(upDown!=0){
+        if(lifeGage.damege(totalScore)==1){
           upDown=0;
         }else{
             upDown=1;
         }
-        SpriteChange.OnClick();
-
    }
     void Update()
     {
@@ -32,6 +29,5 @@ public class PunchGage : MonoBehaviour
         {
             upDown = 1;
         }
-　　　　 // totalScoreを増減させるコードは今回は省略
     }
 }
