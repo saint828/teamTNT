@@ -14,8 +14,9 @@ public class PunchGage : MonoBehaviour
     public GameObject clicked_object;
     public AudioClip clip; // AudioSourceのAudioClipに選択されている音データを格納
 
+    
     public void punch(){
-        if(lifeGage.damege(totalScore)==1){
+        if(BreakObject.damege(totalScore)==1){
           upDown=0;
         }else{
             upDown=1;
