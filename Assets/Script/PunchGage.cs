@@ -9,10 +9,9 @@ public class PunchGage : MonoBehaviour
     private float totalScore=0; // 得点を代入する変数
     float upDown = 1; // 得点を代入する変数
     public BreakObject BreakObject;
-    public lifeGage lifeGage;
     
     public void punch(){
-        if(lifeGage.damege(totalScore)==1){
+        if(BreakObject.damege(totalScore)==1){
           upDown=0;
         }else{
             upDown=1;
