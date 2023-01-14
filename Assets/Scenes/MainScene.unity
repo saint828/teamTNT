@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 2069357108}
   - component: {fileID: 2069357111}
   m_Layer: 0
-  m_Name: tsuboObjet
+  m_Name: tsuboObjcet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
