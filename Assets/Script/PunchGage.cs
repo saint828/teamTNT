@@ -21,7 +21,6 @@ public class PunchGage : MonoBehaviour
         }else{
             upDown=1;
         }
-        clicked_object = GameObject.Find("tsuboObjcet");
         clip = clicked_object.GetComponent<AudioSource>().clip;
         Debug.Log(clip);
         clicked_object.GetComponent<AudioSource>().PlayOneShot(clip);
