@@ -8,23 +8,12 @@ public class PunchGage : MonoBehaviour
     public Image scoreGauge; // ゲージ本体画像をインスペクターからセット
     private float totalScore=0; // 得点を代入する変数
     float upDown = 1; // 得点を代入する変数
-    public BreakObject BreakObject;
-    public lifeGage lifeGage;
 
-    public GameObject clicked_object;
-    public AudioClip clip; // AudioSourceのAudioClipに選択されている音データを格納
-
-    
-    public void punch(){
-        if(BreakObject.damege(totalScore)==1){
-          upDown=0;
-        }else{
-            upDown=1;
-        }
-        clip = clicked_object.GetComponent<AudioSource>().clip;
-        Debug.Log(clip);
-        clicked_object.GetComponent<AudioSource>().PlayOneShot(clip);
-        Debug.Log("You clicked.");
+    public float punch(){
+        return totalScore;
+    }
+    public void stop(){
+        upDown=0;
     }
     void Update()
     {

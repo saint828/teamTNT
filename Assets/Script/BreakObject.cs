@@ -6,11 +6,19 @@ using UnityEngine.UI; // <--忘れがち
 public class BreakObject : MonoBehaviour{
     public SpriteChange SpriteChange;
     public lifeGage lifeGage;
-    public int damege(float damege){
-        int temp= lifeGage.damege(damege);
-        if(temp==1){
+    public PunchGage PunchGage;
+    public GameObject clicked_object;
+    public AudioClip clip; // AudioSourceのAudioClipに選択されている音データを格納
+
+    public void touch(){
+        float punchDamage=PunchGage.punch();
+        if(lifeGage.damage(punchDamage)==1){
             SpriteChange.OnClick();
+            PunchGage.stop();
         }
-        return temp;
+        clip = clicked_object.GetComponent<AudioSource>().clip;
+        Debug.Log(clip);
+        clicked_object.GetComponent<AudioSource>().PlayOneShot(clip);
+        Debug.Log("You clicked.");
     }
 }
