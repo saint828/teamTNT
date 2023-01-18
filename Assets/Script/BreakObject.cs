@@ -4,21 +4,31 @@ using UnityEngine;
 using UnityEngine.UI; // <--忘れがち
 
 public class BreakObject : MonoBehaviour{
-    public SpriteChange SpriteChange;
-    public lifeGage lifeGage;
+    public LifeGage LifeGage;
     public PunchGage PunchGage;
-    public GameObject clicked_object;
-    public AudioClip clip; // AudioSourceのAudioClipに選択されている音データを格納
+    public SpriteChange SpriteChange;
+    [SerializeField] private Sprite NextSprite;
+    public AudioClip highPunch;
+    public AudioClip middlePunch;
+    public AudioClip lowPunch;
+    AudioSource audioSource;
 
+    public void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void touch(){
         float punchDamage=PunchGage.punch();
-        if(lifeGage.damage(punchDamage)==1){
-            SpriteChange.OnClick();
+        if(LifeGage.damage(punchDamage)==1){
+            SpriteChange.OnClick(NextSprite);
             PunchGage.stop();
         }
-        clip = clicked_object.GetComponent<AudioSource>().clip;
-        Debug.Log(clip);
-        clicked_object.GetComponent<AudioSource>().PlayOneShot(clip);
-        Debug.Log("You clicked.");
+        if(punchDamage>0.7f){
+            audioSource.PlayOneShot(highPunch);
+        }else if(punchDamage>0.3f){
+            audioSource.PlayOneShot(middlePunch);
+        }else{
+            audioSource.PlayOneShot(lowPunch);
+        }
     }
 }

@@ -6,10 +6,9 @@ public class SpriteChange : MonoBehaviour
 {
   [SerializeField] private GameObject TargetSprite;
 
-  [SerializeField] private Sprite NextSprite;
-
-  public void OnClick()
+  public void OnClick(Sprite NextSprite)
   {
+    TargetSprite =  GameObject.FindGameObjectWithTag("BreakObject");
     if (TargetSprite == null)
     {
       Debug.Log($"{nameof(TargetSprite)} が null です。");
