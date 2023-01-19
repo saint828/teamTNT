@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public static bool[] is_Having = {false,false,false,true};
     public static int equipment = 3;
+    public static int score = 0;
 
     public static void set_having(int i){
         is_Having[i] = true;  
