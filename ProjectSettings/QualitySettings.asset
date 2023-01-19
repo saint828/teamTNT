@@ -41,7 +41,11 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
+    - iPhone
+    - WebGL
+    - tvOS
   - serializedVersion: 2
     name: Low
     pixelLightCount: 0
@@ -79,6 +83,9 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - iPhone
+    - Android
+    - WebGL
+    - tvOS
   - serializedVersion: 2
     name: Medium
     pixelLightCount: 1
@@ -93,7 +100,7 @@ QualitySettings:
     shadowmaskMode: 0
     skinWeights: 2
     textureQuality: 0
-    anisotropicTextures: 1
+    anisotropicTextures: 0
     antiAliasing: 0
     softParticles: 0
     softVegetation: 0
@@ -150,7 +157,12 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
+    - iPhone
+    - tvOS
+    - Server
+    - WebGL
   - serializedVersion: 2
     name: Very High
     pixelLightCount: 3
@@ -186,7 +198,12 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
+    - iPhone
+    - WebGL
+    - tvOS
+    - Server
   - serializedVersion: 2
     name: Ultra
     pixelLightCount: 4
@@ -222,7 +239,12 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - iPhone
+    - WebGL
+    - tvOS
+    - Server
+    - Android
   m_PerPlatformDefaultQuality:
     Android: 2
     Lumin: 5
@@ -231,7 +253,7 @@ QualitySettings:
     Server: 0
     Stadia: 5
     Standalone: 5
-    WebGL: 3
+    WebGL: 2
     Windows Store Apps: 5
     XboxOne: 5
     iPhone: 2
