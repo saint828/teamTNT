@@ -12,12 +12,13 @@ public class BreakObject : MonoBehaviour{
     public AudioClip middlePunch;
     public AudioClip lowPunch;
     public AudioClip breakSound;
-    public AudioClip swordSound;
     public StartGame StartGame;
     [SerializeField] AudioSource[] audioSource;
-
+    AudioClip swordSound;
     public void Start()
     {
+        int i= Player.get_equipment();
+        swordSound=StartGame.clips[i-1];
     }
     public void touch(){
         float punchDamage=PunchGage.punch();
