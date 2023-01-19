@@ -7,7 +7,7 @@ public class Scene_Button : MonoBehaviour
 {
     public string sceneName;
 
-    void OnMouseDown(){
+    public void OnMouseDown(){
         SceneManager.LoadScene(sceneName);
     }
 }

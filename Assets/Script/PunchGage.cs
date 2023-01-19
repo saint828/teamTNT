@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // <--忘れがち
-
 public class PunchGage : MonoBehaviour
 {
     public Image scoreGauge; // ゲージ本体画像をインスペクターからセット
@@ -15,10 +14,10 @@ public class PunchGage : MonoBehaviour
     public void stop(){
         upDown=0;
     }
-    void Update()
+    void FixedUpdate()
     {
         scoreGauge.fillAmount = totalScore / 100.0f;
-        totalScore += 0.3f * upDown;
+        totalScore += 1.0f * upDown;
         if(totalScore > 100)
         {
             upDown = -1;
