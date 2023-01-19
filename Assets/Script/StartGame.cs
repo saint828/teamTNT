@@ -10,7 +10,11 @@ public class StartGame : MonoBehaviour
     public GameObject prefab2;
     public GameObject prefab3;
     public GameObject prefab4;
-    [SerializeField] AudioClip[] swordSound;
+    AudioClip fireSound;
+    AudioClip waterSound;
+    AudioClip thunderSound;
+    AudioClip noneSound;
+    AudioClip[] clips = new AudioClip[4];
     float totalScore = 0;
     GameObject clone;
     GameObject[] prefabs = new GameObject[5];
@@ -20,12 +24,18 @@ public class StartGame : MonoBehaviour
         prefabs[2] = prefab2;
         prefabs[3] = prefab3;
         prefabs[4] = prefab4;
+        clips[0] = fireSound;
+        clips[1] = waterSound;
+        clips[2] = thunderSound;
+        clips[3] = noneSound;
         miniGameStart();
     }
     void miniGameStart(){
         int i = Random.Range(0,5);
-        GameObject clone = Instantiate(prefabs[i], new Vector3(0.0f,2.0f,0.0f),Quaternion.identity);
-        clone.swordSound = swordSound[Player.get_equipment()];
+        clone = Instantiate(prefabs[i], new Vector3(0.0f,2.0f,0.0f),Quaternion.identity);
+        i=Player.get_equipment();
+        BreakObject breakObject = clone.GetComponent<BreakObject>();
+        breakObject.swordSound = clips[i];
 
     }
     public void gameOver(float score){
