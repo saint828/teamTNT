@@ -20,7 +20,7 @@ public class BreakObject : MonoBehaviour{
     {
         StartGame=GameObject.Find("StartScript").GetComponent<StartGame>();
         int i= Player.get_equipment();
-        swordSound=StartGame.clips[i-1];
+        swordSound=StartGame.clips[i];
     }
     public void touch(){
         float punchDamage=PunchGage.punch();
