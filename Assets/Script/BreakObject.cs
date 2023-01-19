@@ -11,24 +11,32 @@ public class BreakObject : MonoBehaviour{
     public AudioClip highPunch;
     public AudioClip middlePunch;
     public AudioClip lowPunch;
-    AudioSource audioSource;
+    public AudioClip breakSound;
+    public AudioClip swordSound;
+    [SerializeField] AudioSource[] audioSource;
 
     public void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+
     }
     public void touch(){
         float punchDamage=PunchGage.punch();
         if(LifeGage.damage(punchDamage)==1){
-            SpriteChange.OnClick(NextSprite);
-            PunchGage.stop();
+            broken();
+
         }
         if(punchDamage>0.7f){
-            audioSource.PlayOneShot(highPunch);
+            audioSource[0].PlayOneShot(highPunch);
         }else if(punchDamage>0.3f){
-            audioSource.PlayOneShot(middlePunch);
+            audioSource[0].PlayOneShot(middlePunch);
         }else{
-            audioSource.PlayOneShot(lowPunch);
+            audioSource[0].PlayOneShot(lowPunch);
         }
+        audioSource[1].PlayOneShot(swordSound);
+    }
+    void broken(){
+        SpriteChange.OnClick(NextSprite);
+        PunchGage.stop();
+        audioSource[2].PlayOneShot(breakSound);
     }
 }
