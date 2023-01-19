@@ -13,11 +13,11 @@ public class BreakObject : MonoBehaviour{
     public AudioClip lowPunch;
     public AudioClip breakSound;
     public AudioClip swordSound;
+    public StartGame StartGame;
     [SerializeField] AudioSource[] audioSource;
 
     public void Start()
     {
-
     }
     public void touch(){
         float punchDamage=PunchGage.punch();
@@ -38,5 +38,6 @@ public class BreakObject : MonoBehaviour{
         SpriteChange.OnClick(NextSprite);
         PunchGage.stop();
         audioSource[2].PlayOneShot(breakSound);
+        StartGame.gameOver(100.0f);
     }
 }
