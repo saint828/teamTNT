@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0932ffbe77f0b04ca98e3972156ed9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: mainGacha
+  sceneName: MainScene
 --- !u!61 &2041912786
 BoxCollider2D:
   m_ObjectHideFlags: 0
