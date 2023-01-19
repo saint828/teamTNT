@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
+using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     public GameObject[] prefabs=new GameObject[5];
@@ -18,6 +19,8 @@ public class StartGame : MonoBehaviour
         Player.score += (int)(score/1000);
         Destroy(clone,1.5f);
         await Task.Delay(1500);
-        miniGameStart();
+        if(SceneManager.GetActiveScene().name=="MainScene"){
+            miniGameStart();
+        }
     }
 }
