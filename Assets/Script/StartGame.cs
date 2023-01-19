@@ -5,25 +5,15 @@ using UnityEngine;
 public class StartGame : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject prefab;
-    public GameObject prefab1;
-    public GameObject prefab2;
-    public GameObject prefab3;
-    public GameObject prefab4;
+    public GameObject[] prefabs=new GameObject[5];
     public AudioClip[] clips = new AudioClip[4];
     float totalScore = 0;
     GameObject clone;
-    GameObject[] prefabs = new GameObject[5];
     void Start(){
-        prefabs[0] = prefab;
-        prefabs[1] = prefab1;
-        prefabs[2] = prefab2;
-        prefabs[3] = prefab3;
-        prefabs[4] = prefab4;
         miniGameStart();
     }
     void miniGameStart(){
-        int i = Random.Range(0,5);
+        int i = Random.Range(0,prefabs.Length);
         clone = Instantiate(prefabs[i], new Vector3(0.0f,2.0f,0.0f),Quaternion.identity);
     }
     public void gameOver(float score){
