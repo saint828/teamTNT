@@ -10,10 +10,10 @@ public class StartGame : MonoBehaviour
     public GameObject prefab2;
     public GameObject prefab3;
     public GameObject prefab4;
-    AudioClip fireSound;
-    AudioClip waterSound;
-    AudioClip thunderSound;
-    AudioClip noneSound;
+    public AudioClip fireSound;
+    public AudioClip waterSound;
+    public AudioClip thunderSound;
+    public AudioClip noneSound;
     AudioClip[] clips = new AudioClip[4];
     float totalScore = 0;
     GameObject clone;
