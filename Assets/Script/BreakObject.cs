@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // <--忘れがち
+using UnityEngine.UI;
 
 public class BreakObject : MonoBehaviour{
     public LifeGage LifeGage;
@@ -16,6 +16,7 @@ public class BreakObject : MonoBehaviour{
     [SerializeField] AudioSource[] audioSource;
     AudioClip swordSound;
     int brokenCount=0;
+    float score=0;
     public void Start()
     {
         StartGame=GameObject.Find("StartScript").GetComponent<StartGame>();
@@ -24,6 +25,7 @@ public class BreakObject : MonoBehaviour{
     }
     public void touch(){
         float punchDamage=PunchGage.punch();
+        score+=(punchDamage)*(punchDamage)*(punchDamage);
         if(LifeGage.damage(punchDamage)==1){
             broken();
 
@@ -44,7 +46,7 @@ public class BreakObject : MonoBehaviour{
             SpriteChange.OnClick(NextSprite);
             PunchGage.stop();
             audioSource[2].PlayOneShot(breakSound);
-            StartGame.gameOver(100.0f);
+            StartGame.gameOver(score);
             return;
         }
     }

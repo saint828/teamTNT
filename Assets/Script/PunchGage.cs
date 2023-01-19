@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // <--忘れがち
+using UnityEngine.UI;
 public class PunchGage : MonoBehaviour
 {
-    public Image scoreGauge; // ゲージ本体画像をインスペクターからセット
-    private float totalScore=0; // 得点を代入する変数
-    float upDown = 1; // 得点を代入する変数
+    public Image scoreGauge;
+    private float totalScore=0;
+    float upDown = 1;
 
     public float punch(){
         return totalScore;
