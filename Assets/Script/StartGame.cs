@@ -16,7 +16,7 @@ public class StartGame : MonoBehaviour
         clone = Instantiate(prefabs[i], new Vector3(0.0f,2.0f,0.0f),Quaternion.identity);
     }
     public async void gameOver(float score){
-        Player.score += (int)(score/1000);
+        Player.score += (int)(score/10000);
         Destroy(clone,1.5f);
         await Task.Delay(1500);
         if(SceneManager.GetActiveScene().name=="MainScene"){
