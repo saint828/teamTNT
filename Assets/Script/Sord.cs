@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sord : MonoBehaviour
 {
-    public static string[] Sord_Name = {"Fire Sword","Water Sword","Thunder Sword"};
+    public static string[] Sord_Name = {"Fire Sword","Water Sword","Thunder Sword","ordinal Sword"};
 
     public static int return_swordnum(){
         int rInt = Random.Range(0, 3);
