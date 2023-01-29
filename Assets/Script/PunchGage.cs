@@ -17,7 +17,7 @@ public class PunchGage : MonoBehaviour
     void FixedUpdate()
     {
         scoreGauge.fillAmount = totalScore / 100.0f;
-        totalScore += 1.0f * upDown;
+        totalScore += 5.0f * upDown;
         if(totalScore > 100)
         {
             upDown = -1;
