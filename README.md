@@ -9,7 +9,18 @@
 
 アプリ名 壊せASMR
 
-ビルドし次第インストール方法を記載します
+build方法
+
+1. クローンを行う(例ではHTTPS)
+
+`$git clone https://github.com/saint828/teamTNT.git`
+
+2. Unityのダウンロード
+
+本ゲームはUnity2021.3.11f1にて作成
+
+3. リポジトリ内のAssets/Scenes/GameTopScene.unityをUnityで開く
+
 
 効果音：
 ポケットサウンド – https://pocket-se.info/
