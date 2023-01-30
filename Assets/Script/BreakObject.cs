@@ -17,6 +17,7 @@ public class BreakObject : MonoBehaviour{
     AudioClip swordSound;
     int brokenCount=0;
     float score=0;
+    float punchVolume;
     public void Start()
     {
         StartGame=GameObject.Find("StartScript").GetComponent<StartGame>();
@@ -26,16 +27,17 @@ public class BreakObject : MonoBehaviour{
     public void touch(){
         float punchDamage=PunchGage.punch();
         score+=(punchDamage)*(punchDamage)*(punchDamage);
+        punchVolume = punchDamage / 10;
         if(LifeGage.damage(punchDamage)==1){
             broken();
 
         }else{
             if(punchDamage>0.7f){
-                audioSource[0].PlayOneShot(highPunch);
+                audioSource[0].PlayOneShot(highPunch, punchVolume);
             }else if(punchDamage>0.3f){
-                audioSource[0].PlayOneShot(middlePunch);
+                audioSource[0].PlayOneShot(middlePunch, punchVolume);
             }else{
-                audioSource[0].PlayOneShot(lowPunch);
+                audioSource[0].PlayOneShot(lowPunch, punchVolume);
             }
             audioSource[1].PlayOneShot(swordSound);
         }
@@ -45,7 +47,7 @@ public class BreakObject : MonoBehaviour{
             brokenCount++;
             SpriteChange.OnClick(NextSprite);
             PunchGage.stop();
-            audioSource[2].PlayOneShot(breakSound);
+            audioSource[2].PlayOneShot(breakSound, punchVolume);
             StartGame.gameOver(score);
             return;
         }
